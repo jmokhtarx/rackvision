@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head><base target="_top"></head>
+  <body>
+    <script>
+      window.parent.postMessage({
+        type: 'rackvision-contact-result',
+        status: '<?= status ?>'
+      }, '*');
+    </script>
+  </body>
+</html>
