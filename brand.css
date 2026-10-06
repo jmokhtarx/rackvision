@@ -192,6 +192,22 @@ body { line-height: 1.75; }
 .brand-mark { width: 48px; height: 48px; }
 .primary-nav { gap: clamp(18px, 2.1vw, 32px); }
 .hero { background-image: radial-gradient(ellipse at 82% 40%, #2d435138, transparent 42%); }
+/* Pexels photo 442150: technician working on a server rack. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgba(16, 27, 38, .91) 0%, rgba(16, 27, 38, .78) 48%, rgba(16, 27, 38, .62) 100%),
+    linear-gradient(0deg, rgba(16, 27, 38, .74) 0%, rgba(16, 27, 38, .08) 48%, rgba(16, 27, 38, .46) 100%),
+    url("https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=2200");
+  background-position: center, center, center 44%;
+  background-size: cover;
+}
+.hero-grid { z-index: 1; }
+.hero-inner, .hero-bottom { z-index: 2; }
 .hero-inner { gap: clamp(32px, 5vw, 64px); }
 .hero h1, .section h2, .closing-cta h2 { letter-spacing: -.045em; }
 .hero h1 { font-weight: 650; }
