@@ -213,6 +213,54 @@ body { line-height: 1.75; }
 .hero h1 { font-weight: 650; }
 .hero-lead { color: #c1cdcf; }
 .hero-visual { border-radius: 4px; box-shadow: 0 26px 70px #07111b38; }
+
+/* Reuse a second Pexels cabling-work photo as a quiet texture across dark sections. */
+.services-section,
+.approach-section,
+.details-section,
+.media-feature,
+.careers-section,
+.closing-cta,
+.site-footer {
+  position: relative;
+  isolation: isolate;
+}
+.services-section::before,
+.approach-section::before,
+.details-section::before,
+.media-feature::before,
+.careers-section::before,
+.closing-cta::before,
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgba(16, 27, 38, .88), rgba(16, 27, 38, .78)),
+    linear-gradient(0deg, rgba(16, 27, 38, .76), rgba(16, 27, 38, .18) 52%, rgba(16, 27, 38, .72)),
+    url("https://images.pexels.com/photos/442151/pexels-photo-442151.jpeg?auto=compress&cs=tinysrgb&w=2000");
+  background-position: center, center, var(--cabling-photo-position, center 42%);
+  background-size: cover;
+}
+.services-section { --cabling-photo-position: 58% 35%; }
+.approach-section { --cabling-photo-position: 30% 48%; }
+.details-section { --cabling-photo-position: 72% 45%; }
+.media-feature { --cabling-photo-position: 62% 44%; }
+.careers-section { --cabling-photo-position: 44% 36%; }
+.closing-cta { --cabling-photo-position: 68% 50%; }
+.site-footer { --cabling-photo-position: 25% 52%; }
+.services-section>.container,
+.approach-section>.container,
+.details-section>.container,
+.careers-section>.container,
+.closing-cta>.container,
+.site-footer>.container,
+.media-feature>* {
+  position: relative;
+  z-index: 1;
+}
 .button { min-height: 48px; border-radius: 3px; }
 .nav-contact { border-radius: 3px; }
 .section { padding-block: clamp(82px, 8vw, 112px); }
